@@ -76,7 +76,6 @@ void core0_main(void)
     initLED();  /* Initialize the LED port pin      */
 
     xTaskCreate(OsTasks_led0_task, "LED0 task", configMINIMAL_STACK_SIZE, NULL, 10, NULL);
-    //xTaskCreate(OsTasks_led1_task, "LED1 task", configMINIMAL_STACK_SIZE, NULL, 10, NULL);
     /* Start the tasks running. */
     vTaskStartScheduler();
 
