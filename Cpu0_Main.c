@@ -48,7 +48,7 @@
 
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
-static __attribute__((__noreturn__)) void OsTasks_led0_task(void *arg)
+static __attribute__((__noreturn__)) void OsTasks_led_task(void *arg)
 {
     (void)arg;
 
@@ -75,7 +75,7 @@ void core0_main(void)
     
     initLED();  /* Initialize the LED port pin      */
 
-    xTaskCreate(OsTasks_led0_task, "LED0 task", configMINIMAL_STACK_SIZE, NULL, 10, NULL);
+    xTaskCreate(OsTasks_led0_task, "LED task", configMINIMAL_STACK_SIZE, NULL, 10, NULL);
     /* Start the tasks running. */
     vTaskStartScheduler();
 
